@@ -26,7 +26,7 @@ function swTransformer(mode, path) {
     ]
 
     if (mode === 'pwa' && endsWith(path, 'OneSignalSDKWorker.js')) {
-      scripts.unshift('/service-worker.js?' + Date.now())
+      scripts.unshift('/spa/service-worker.js?' + Date.now())
     }
     return `importScripts(${scripts.map(i => `'${i}'`).join(', ')})\r\n`;
 }
